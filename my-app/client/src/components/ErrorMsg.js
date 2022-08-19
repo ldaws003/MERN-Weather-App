@@ -1,10 +1,12 @@
+import React from 'react';
+
 function ErrorMsg(props)
 {
 	return(
-		<div>
-			<h2>{props.errorMSG}</h2>
+		<div className="error-msg">
+			<h2>{props.msg}</h2>
 		</div>
 	);
 }
 
-export default ErrorMsg
+export default ErrorMsg;

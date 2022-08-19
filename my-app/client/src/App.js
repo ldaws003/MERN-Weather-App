@@ -1,8 +1,10 @@
 import logo from './logo.svg';
-import './App.css';
-import 'WeatherLocal'
-import 'Search'
-import 'ErrorMsg'
+import React from 'react';
+import './css/App.css';
+import WeatherLocal from './components/WeatherLocal';
+import Search from './components/Search';
+import ErrorMsg from './components/ErrorMsg';
+
 
 class App extends React.Component 
 {
@@ -16,24 +18,24 @@ class App extends React.Component
 	}
 	
 	clearErrorMsg(){
-		this.setState(
+		this.setState({
 			error: ''
-		);
+		});
 	};
 	
 	setErrorMsg(msg){
-		this.setState(
+		this.setState({
 			error: msg
-		);
+		});
 	};
 
 	
 	render(){
 		return (
 			<div className="App">
-			  <WeatherLocal/>
-			  <Search/>
-			  {this.state.error != '' ? <ErrorMsg msg={this.state.error}/> : null}
+			  <WeatherLocal setErrorMsg={this.setErrorMsg}/>
+			  {/*<Search setErrorMsg={this.setErrorMsg}/>*/}
+			  {this.state.error !== '' ? <ErrorMsg msg={this.state.error}/> : null}
 			</div>
 		);
 	}

@@ -1,38 +1,122 @@
-.App {
-  text-align: center;
+/*weather local*/
+html {
+	background: linear-gradient(-45deg, #f00044, #05ffde);
+	height: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*display weather*/
+.weather-icon {
+	height: 75px;
+	width: 75px;
+	margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.weather-card {
+	padding: 5px;
+	background-color: hsla(178, 100%, 87%, 0.87);
+	font-family: monospace;
+	box-shadow: 10px, 5px, 5px, hsla(343, 0%, 52%, 0.87);
+	flex-grow: 2;
+	flex-shrink: 1;
+	align-self: stretch;
+	order: 2;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.coord-ask {
+	font-family: sans-serif;
+	display: block;
+	margin: 0 auto;
+	padding: 5vw;
 }
 
-.App-link {
-  color: #61dafb;
+.yes-btn {
+	width: 150px;
+	background-color: hsla(119, 100%, 52%, 0.87);
+	box-shadow: 5px 5px hsla(119, 0%, 36%, 0.86);
+	margin: 5px;
+	border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.yes-btn:hover {
+	background-color: hsla(119, 100%, 26%, 1);
+	box-shadow: none;
+}
+
+.no-btn {
+	width: 150px;
+	background-color: hsla(3, 93%, 53%, 0.95);
+	box-shadow: 5px 5px hsla(119, 0%, 36%, 0.86);
+	margin: 5px;
+	border: none;
+}
+
+.no-btn:hover {
+	background-color: hsla(3, 93%, 33%, 1);
+	box-shadow: none;
+}
+
+.cursor-btn {
+	align-self: stretch;
+	flex-grow: 1;
+	flex-shrink: 2;
+}
+
+.nextWeather-btn {
+	order: 3;
+}
+
+.prevWeather-btn {
+	order: 1;
+}
+
+.result-container {
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 0px;
+	
+	/*centering vertical*/
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.vertical-containter {
+	height: 100vh;
+	position: relative;
+}
+
+/*For ErrorMsg Component*/
+.error-msg {
+	background-color: hsla(0, 58%, 54%, 0.9);
+	color: black;
+	font-family: sans-serif;
+}
+
+
+@media (max-width: 850px){
+	/*change the flex properties of the curosor buttons so that they're on bottom and the weather card is above
+	
+	.result-containter {
+		
+	}
+	
+	.prevWeather-btn {
+		order: 2;
+	}
+	
+	.nextWeather-btn {
+		order: 3;
+	}
+	
+	.weather-card  {
+		order: 1
+	}
+	*/
 }
